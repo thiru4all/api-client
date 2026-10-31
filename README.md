@@ -1,2 +1,13 @@
-# api-client
-Dispatch is a Postman-style request builder that runs entirely in the browser. It's a client-only React 18 + Vite single-page app with no backend, router, or state library.
+# Dispatch – API client
+
+A Postman-style request builder with cURL import, built with React + Vite.
+
+## Run
+    npm install
+    npm run dev
+
+Open http://localhost:5173
+
+## Build
+    npm run build
+    npm run preview
