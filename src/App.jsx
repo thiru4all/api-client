@@ -557,7 +557,7 @@ const initialReq = () => ({
   fields: [newRow()],
 });
 
-const newTab = (req = { ...initialReq(), url: "" }) => ({
+const newTab = (req ={ ...initialReq(), url: "" }) => ({
   id: uid(),
   req,
   res: null,
@@ -809,7 +809,7 @@ export default function ApiClient() {
       } else {
         setRes({
           error: e.message || "Request failed",
-          hint: "The browser couldn’t complete this request. Common causes: the server doesn’t allow cross-origin (CORS) requests, the host can’t be reached, or the URL is invalid. Browsers can’t bypass CORS — turn on “Proxy” next to Send to route the request through the local dev server.",
+          hint: "The browser couldn’t complete this request. Common causes: the server doesn’t allow cross-origin (CORS) requests, the host can’t be reached, or the URL is invalid. Browsers can’t bypass CORS — turn on “Proxy” next to Send to route the request through the server.",
         });
       }
     } finally {
@@ -953,7 +953,7 @@ export default function ApiClient() {
           onPaste={onUrlPaste}
           onKeyDown={(e) => e.key === "Enter" && (loading ? null : send())}
         />
-        <label className="proxy-toggle" title="Send via the local dev server to bypass CORS (npm run dev / preview only)">
+        <label className="proxy-toggle" title="Send via the server-side proxy to bypass CORS">
           <input type="checkbox" checked={useProxy} onChange={(e) => setUseProxy(e.target.checked)} /> Proxy
         </label>
         {loading ? (
